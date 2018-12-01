@@ -1,0 +1,40 @@
+.bgimage{
+    background:#fff;
+}
+
+body {
+    font-family: 'Roboto', 'Sans-Serif';
+    color:#111;
+    font-size:18px;
+    text-align:center;
+    
+}
+.main-bg{
+   background: url('../images/cryptocurrency___blockchain_wallpaper_for_desktop_by_luvcrypto-dc56tup.png') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width:100%;
+    height:100%;
+}
+.game-div{
+    background: rgba(76, 130, 175, 0.60);
+    margin-right:1%;
+    
+    
+}
+.opacity-end{
+    opacity: 100%;
+}
+.opt{
+    font-weight: bold;
+}
+.question{
+    font-size:26px;
+}
+.gameHead{
+    font-weight:bolder;
+    font-size:22px;
+    color:navy;
+}
