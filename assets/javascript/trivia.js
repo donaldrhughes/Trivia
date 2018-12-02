@@ -18,14 +18,54 @@ $(document).ready(function () {
     },
     {
         question: "Who co-founded Etherium?",
-        option0: "Vitalik Buterin",
+        option0: "Daniel Larimer",
         option1: "Marc Andreessen",
         option2: "Satoshi Nakamoto",
-        option3: "Daniel Larimer",
+        option3: "Vitalik Buterin",
         ans: "Vitalik Buterin"
     },
     {
-        question: "What was Mt Gox?",
+        question: "What is crypto mining used for?",
+        option0: "Verifying Transactions",
+        option1: "Trading",
+        option2: "Hiding Transactions",
+        option3: "Speculation",
+        ans: "Verifying Transactions"
+    },
+    {
+        question: "What is a blockchain?",
+        option0: "An Encryption Algorythm",
+        option1: "A Precious Metal",
+        option2: "A Hardware Device",
+        option3: "A Public Ledger",
+        ans: "A Public Ledger"
+    },
+    {
+        question: "Which crypto coin is privacy focused?",
+        option0: "Bitcoin",
+        option1: "Monero",
+        option2: "Litecoin",
+        option3: "Etherium",
+        ans: "Monero"
+    },
+    {
+        question: "Which blockchain allows for ERC-20 coins?",
+        option0: "Bitcoin Cash",
+        option1: "Etherium",
+        option2: "XRP",
+        option3: "Monero",
+        ans: "Etherium"
+    },
+    {
+        question: "Which blockchain is primarity centralized?",
+        option0: "XRP",
+        option1: "Etherium",
+        option2: "Bitcoin",
+        option3: "0x",
+        ans: "XRP"
+    },
+    {
+        question: "What was Mt. Gox?",
         option0: "A place in Italy",
         option1: "A Cryptocurrency Wallet",
         option2: "A Cyber Hangout",

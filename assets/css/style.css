@@ -37,7 +37,7 @@ body {
     margin-bottom:1%;
 }
 .question{
-    font-size:26px;
+    font-size:30px;
     font-weight: bold;
     
 }
@@ -45,4 +45,8 @@ body {
     font-weight:bolder;
     font-size:22px;
     color:navy;
+}
+.top{
+    font-size:32px;
+    font-weight:bolder;
 }
