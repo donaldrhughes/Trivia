@@ -3,7 +3,7 @@ $(document).ready(function () {
 
     //Global Vars
     //======================
-    var sec = 5;
+    var sec = 30;
     var guess;
     var timeAllow = sec;
     var time;
@@ -50,8 +50,9 @@ $(document).ready(function () {
 
 
         options.forEach(function (elem, i) {
-            optDiv = $("<div>");
+            optDiv = $("<button>");
             optDiv.text(options[i]);
+            optDiv.addClass("opt btn btn-outline-dark ");
             $("#opt" + i).append(optDiv);
             $("#opt" + i).on("click", function (i) {
                 guess = i.target.innerHTML;
@@ -89,6 +90,7 @@ $(document).ready(function () {
         choice();
         showElem();
         $("#start").hide();
+        $("#top").hide();
         
     };
 
@@ -144,7 +146,7 @@ $(document).ready(function () {
         timeAllow = sec; 
         $("#start").show();
         card = cards[Math.floor(Math.random() * cards.length)];
-        
+        $("#top").show();
 
     };
 
@@ -156,3 +158,4 @@ $(document).ready(function () {
 
 });
 $("#reset").hide();
+$("#top").text("Blockchain Trivia");
