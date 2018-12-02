@@ -44,11 +44,8 @@ $(document).ready(function () {
         var guesses = [];
         var card = cards[Math.floor(Math.random() * cards.length)];
         $("#question").text(card.question);
-        console.log(card);
-        console.log(card.ans);
         var options = [];
         options.push(card.option0, card.option1, card.option2, card.option3);
-        console.log(options);
 
 
 
@@ -58,20 +55,18 @@ $(document).ready(function () {
             $("#opt" + i).append(optDiv);
             $("#opt" + i).on("click", function (i) {
                 guess = i.target.innerHTML;
-                console.log(guess);
                 if (guess == card.ans) {
-                    console.log("correct");
+                    $("#timer").empty();
+                    $("#timer").html("You are Correct!")
                     clearInterval(time);
                     clearInterval(time2);
                     // var index = options.indexOf(guess);
                     // options.splice(index);
                     time2 = setInterval(next, 1000 * 3);
-                    console.log(time2);
-                    
-                    console.log(options);
                 }
                 else {
-                    console.log("wrong");
+                    $("#timer").empty();
+                    $("#timer").text("Sorry that's Incorrect!")
                     clearInterval(time);
                     clearInterval(time2);
                     time2 = setInterval(next, 1000 * 3);
@@ -84,8 +79,6 @@ $(document).ready(function () {
     function next() {
        
         reset();
-        
-        console.log("cleared");
        
     }
 
@@ -93,7 +86,6 @@ $(document).ready(function () {
         reset();
         timer();
         $("#reset").click(reset);
-        console.log(cards);
         choice();
         showElem();
         $("#start").hide();
@@ -123,11 +115,14 @@ $(document).ready(function () {
 
     function timeLimit() {
         var timeDec = --timeAllow;
-        $("#timer").text("Time Remaining:" + timeDec)
+        $("#timer").text("Time Remaining:" + timeDec);
         if (timeAllow == 0) {
-            $("#timer").empty();
+            // $("#timer").empty();
+            hideElem();
             $("#timer").append("Time Limit Expired!");
             clearInterval(time);
+            clearInterval(time2);
+            time2 = setInterval(next, 1000 * 3);
         }
 
     };
@@ -136,6 +131,7 @@ $(document).ready(function () {
     function timer() {
         $("#timer").text("Time Remaining:" + timeAllow);
         time = setInterval(timeLimit, 1000);
+        
 
     };
 
@@ -144,8 +140,6 @@ $(document).ready(function () {
         guess = "";
         clearInterval(time2);
         clearInterval(time);
-        // clearInterval(time2);
-        
         hideElem();
         timeAllow = sec; 
         $("#start").show();
