@@ -57,7 +57,7 @@ $(document).ready(function () {
         ans: "Etherium"
     },
     {
-        question: "Which blockchain is primarity centralized?",
+        question: "Which blockchain is primarily centralized?",
         option0: "XRP",
         option1: "Etherium",
         option2: "Bitcoin",
@@ -120,17 +120,19 @@ $(document).ready(function () {
     function next() {
        
         reset();
-       
+        $("#continue").show();
+        $("#continue").click(startGame);
     }
 
     function startGame() {
         reset();
         timer();
-        $("#reset").click(reset);
+        $("#reset").click(reset2);
         choice();
         showElem();
         $("#start").hide();
         $("#top").hide();
+        $("#continue").hide();
         
     };
 
@@ -184,9 +186,19 @@ $(document).ready(function () {
         clearInterval(time);
         hideElem();
         timeAllow = sec; 
-        $("#start").show();
         card = cards[Math.floor(Math.random() * cards.length)];
-        $("#top").show();
+        
+
+    };
+    function reset2() {
+        guess = "";
+        $("#continue").show();
+        clearInterval(time2);
+        clearInterval(time);
+        hideElem();
+        timeAllow = sec; 
+        card = cards[Math.floor(Math.random() * cards.length)];
+        $("#continue").click(startGame);
 
     };
 
@@ -199,3 +211,4 @@ $(document).ready(function () {
 });
 $("#reset").hide();
 $("#top").text("Blockchain Trivia");
+$("#continue").hide();
