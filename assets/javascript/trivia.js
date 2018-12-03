@@ -26,7 +26,7 @@ $(document).ready(function () {
     },
     {
         question: "What is crypto mining used for?",
-        option0: "Verifying Transactions",
+        option0: "Verify Transactions",
         option1: "Trading",
         option2: "Hiding Transactions",
         option3: "Speculation",
@@ -34,7 +34,7 @@ $(document).ready(function () {
     },
     {
         question: "What is a blockchain?",
-        option0: "An Encryption Algorythm",
+        option0: "An Algorythm",
         option1: "A Precious Metal",
         option2: "A Hardware Device",
         option3: "A Public Ledger",
@@ -61,16 +61,16 @@ $(document).ready(function () {
         option0: "XRP",
         option1: "Etherium",
         option2: "Bitcoin",
-        option3: "0x",
+        option3: "ZRX",
         ans: "XRP"
     },
     {
         question: "What was Mt. Gox?",
-        option0: "A place in Italy",
-        option1: "A Cryptocurrency Wallet",
+        option0: "A place in Japan",
+        option1: "A Digital Wallet",
         option2: "A Cyber Hangout",
-        option3: "A Cryptocurrency Exchange",
-        ans: "A Cryptocurrency Exchange"
+        option3: "An Exchange",
+        ans: "An Exchange"
     }];
 
 
@@ -80,7 +80,7 @@ $(document).ready(function () {
 
 
     function choice() {
-        
+
         var guesses = [];
         var card = cards[Math.floor(Math.random() * cards.length)];
         $("#question").text(card.question);
@@ -92,10 +92,18 @@ $(document).ready(function () {
         options.forEach(function (elem, i) {
             optDiv = $("<button>");
             optDiv.text(options[i]);
-            optDiv.addClass("opt btn btn-outline-secondary");
+            optDiv.addClass("opt btn btn-outline-secondary text-justify");
             $("#opt" + i).append(optDiv);
             $(optDiv).on("click", function (i) {
                 guess = i.target.innerHTML;
+
+                var j = $.inArray(guess, options);
+                if (j != -1) {
+                    options.splice(j, 1);
+                }
+
+                
+                console.log(options);
                 if (guess == card.ans) {
                     $("#timer").empty();
                     $("#timer").html("You are Correct!")
@@ -112,13 +120,13 @@ $(document).ready(function () {
                     clearInterval(time2);
                     time2 = setInterval(next, 1000 * 3);
                 }
-                
+
             })
-   
+
         });
     }
     function next() {
-       
+
         reset();
         $("#continue").show();
         $("#continue").click(startGame);
@@ -133,7 +141,7 @@ $(document).ready(function () {
         $("#start").hide();
         $("#top").hide();
         $("#continue").hide();
-        
+
     };
 
     function showElem() {
@@ -175,7 +183,7 @@ $(document).ready(function () {
     function timer() {
         $("#timer").text("Time Remaining:" + timeAllow);
         time = setInterval(timeLimit, 1000);
-        
+
 
     };
 
@@ -185,9 +193,9 @@ $(document).ready(function () {
         clearInterval(time2);
         clearInterval(time);
         hideElem();
-        timeAllow = sec; 
+        timeAllow = sec;
         card = cards[Math.floor(Math.random() * cards.length)];
-        
+
 
     };
     function reset2() {
@@ -196,7 +204,7 @@ $(document).ready(function () {
         clearInterval(time2);
         clearInterval(time);
         hideElem();
-        timeAllow = sec; 
+        timeAllow = sec;
         card = cards[Math.floor(Math.random() * cards.length)];
         $("#continue").click(startGame);
 
