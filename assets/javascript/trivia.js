@@ -65,6 +65,22 @@ $(document).ready(function () {
         ans: "XRP"
     },
     {
+        question: "What is the smallest denomination of a bitcoin called?",
+        option0: "Satoshi",
+        option1: "Megabit",
+        option2: "Kilobit",
+        option3: "Terabit",
+        ans: "Satoshi"
+    },
+    {
+        question: "Which of the following is NOT a crypto exchange?",
+        option0: "Gemini",
+        option1: "Coinbase",
+        option2: "Binance",
+        option3: "Nano",
+        ans: "Nano"
+    },
+    {
         question: "What was Mt. Gox?",
         option0: "A place in Japan",
         option1: "A Digital Wallet",
