@@ -30,7 +30,7 @@ $(document).ready(function () {
         option1: "Trading",
         option2: "Hiding Transactions",
         option3: "Speculation",
-        ans: "Verifying Transactions"
+        ans: "Verify Transactions"
     },
     {
         question: "What is a blockchain?",
