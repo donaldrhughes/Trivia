@@ -92,9 +92,9 @@ $(document).ready(function () {
         options.forEach(function (elem, i) {
             optDiv = $("<button>");
             optDiv.text(options[i]);
-            optDiv.addClass("opt btn btn-outline-dark ");
+            optDiv.addClass("opt btn btn-outline-secondary");
             $("#opt" + i).append(optDiv);
-            $("#opt" + i).on("click", function (i) {
+            $(optDiv).on("click", function (i) {
                 guess = i.target.innerHTML;
                 if (guess == card.ans) {
                     $("#timer").empty();

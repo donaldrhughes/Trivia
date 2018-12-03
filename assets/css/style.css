@@ -29,11 +29,11 @@ body {
 }
 .opt{
     font-weight: bold;
-    border: 1px dotted #000;
+    
     font-size:22px;
     color:#fff;
-    margin-left:5%;
-    margin-right:5%;
+    margin-left:25%;
+    margin-right:25%;
     margin-bottom:1%;
 }
 .question{
@@ -52,4 +52,7 @@ body {
 }
 #top{
     color: gold;
+}
+#opt{
+    
 }
